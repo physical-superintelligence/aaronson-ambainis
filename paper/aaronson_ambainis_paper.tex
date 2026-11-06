@@ -1192,26 +1192,15 @@ Let $g$ be a Boolean function on $Q_n$ and $M$ its agreement matrix. Then \mbox{
 \end{lemma}
 
 \begin{proof}
-Let $c=2^{n}$, and substitute $c$ for every $s_i$. The substitution is a ring homomorphism
-$\Z[s]\to\R$, so it maps $\det M$ to the determinant of the real matrix $B$ with entries
-$B[x,z]=c^{\abs{\ag(x,z)}}$.
-
-The diagonal entries of $B$ are $c^{n}$, and for $z\ne x$ we have
-$\abs{\ag(x,z)}\le n-1$. A row has $\abs{\cO}-1<2^{n}=c$ off-diagonal entries. So for every $x\in\cO$
+In the Leibniz formula, the identity permutation contributes the monomial
 \[
-   \sum_{z\in\cO,\ z\ne x}B[x,z]\;\le\;(\abs{\cO}-1)\,c^{\,n-1}\;<\;c^{n}\;=\;B[x,x].
+   \prod_{x\in\cO}M[x,x]=(s_1\cdots s_n)^{\abs{\cO}},
 \]
-
-A real square matrix $B$ with non-negative entries in which every diagonal entry exceeds the sum
-of the other entries of its row has $\det B\ne0$: if $Bv=0$ with $v\ne0$, choose $x$ with $\abs{v_x}$
-largest; then
-\[
-   B[x,x]\abs{v_x}\;=\;\Bigl\lvert\sum_{z\ne x}B[x,z]v_z\Bigr\rvert\;\le\;\sum_{z\ne x}B[x,z]\abs{v_x}
-   \;<\;B[x,x]\abs{v_x},
-\]
-which is impossible.
-
-Hence the image of $\det M$ is not zero, and so $\det M\ne0$.
+with coefficient $1$ and total degree $n\abs{\cO}$. Every entry of $M$ has total degree at most
+$n$, and an off-diagonal entry has total degree strictly less than $n$. Thus every non-identity
+permutation contributes a monomial of total degree strictly less than $n\abs{\cO}$. The displayed
+monomial therefore has coefficient $1$ in $\det M$, so $\det M\ne0$. This also covers
+$\cO=\emptyset$, when the determinant and the displayed monomial are both $1$.
 \end{proof}
 
 The next two lemmas bound the exponent of $s_j$ in a lowest monomial of $\det M$. For $j\in[n]$ let

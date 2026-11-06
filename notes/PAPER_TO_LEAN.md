@@ -272,8 +272,10 @@ numbers `L_j(f)`.
   `3125 π^8 ε^9 ≤ 192` for `ε ≤ 1/4` (`Bridge.ratio_pow_le`).
 * Theorem 3.1. The Lean proof constructs the inverse of the bijection of the paper
   (`DetBij.exists_perm`); `DetBij.exists_bijection` translates.
-* Lemma 3.4. Where the paper shows directly that a matrix with a dominant diagonal has a
-  non-zero determinant, the Lean proof (`DetLow/NonZero.lean`) uses the theorem
+* Lemma 3.4. The paper uses the unique monomial of highest total degree in the determinant:
+  the identity permutation contributes `(s₁ ⋯ sₙ)^|O|`, and every other permutation contributes
+  a monomial of strictly smaller total degree. The Lean proof (`DetLow/NonZero.lean`) instead
+  specializes the variables and uses strict diagonal dominance, via the theorem
   `det_ne_zero_of_sum_row_lt_diag` of Mathlib.
 * Lemma 6.1. The paper proves Markov's inequality at an endpoint by interpolation at the
   points `cos(kπ/D)`. The Lean proof (`Row/Markov.lean`) deduces it from the theorem
