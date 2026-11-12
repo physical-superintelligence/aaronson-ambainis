@@ -16,12 +16,13 @@ imports:
 # The one exception is declared here: the challenge of the comparator run states the four final
 # theorems and leaves their proofs open, so it contains the word `sorry` exactly four times.
 audit:
-	python3 scripts/check_no_placeholders.py $(LIB) $(LIB).lean \
+	python3 scripts/check_no_placeholders.py $(LIB) $(LIB).lean audit/OriginalConjecture6.lean \
 		--holes $(LIB)/Comparator/Challenge.lean=4 --json notes/source-audit.json
 
 # Compile the project.
 build:
 	lake build
+	lake env lean audit/OriginalConjecture6.lean
 
 # Print the axioms on which the final theorems depend and check the list.
 axioms:
